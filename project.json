@@ -1,0 +1,10 @@
+{
+    "name": "Kiara1",
+    "version": "1.0.0",
+    "manifest_version": 1,
+    "project_type": "application",
+    "executable_type": "scratch",
+    "executable": "Kiara1.xml",
+    "author": "sgwoods",
+    "minimum_firmware_version": 42
+}
