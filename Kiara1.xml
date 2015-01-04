@@ -6,12 +6,30 @@
     <mutation></mutation>
     <field name="NAME">WriteKiara</field>
     <statement name="STACK">
-      <block type="oled_drawtext" id="2">
-        <field name="TEXT">Hi Kiara</field>
+      <block type="oled_cleardisplay" id="52">
+        <next>
+          <block type="oled_setcursor" id="61" inline="true">
+            <value name="STARTX">
+              <block type="math_number" id="68">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <value name="STARTY">
+              <block type="math_number" id="75">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <next>
+              <block type="oled_drawtext" id="2">
+                <field name="TEXT">Hi Kiara</field>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="3" x="-195" y="174">
+  <block type="procedures_defnoreturn" id="3" x="-197" y="241">
     <mutation></mutation>
     <field name="NAME">DoNothing</field>
     <statement name="STACK">
