@@ -1,19 +1,10 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_setcursor" id="557" inline="true" x="-139" y="81">
-    <value name="STARTX">
-      <block type="math_number" id="573">
-        <field name="NUM">5</field>
-      </block>
-    </value>
-    <value name="STARTY">
-      <block type="math_number" id="580">
-        <field name="NUM">5</field>
-      </block>
-    </value>
+  <block type="oled_cleardisplay" id="548" x="244" y="191">
     <next>
-      <block type="oled_cleardisplay" id="548">
+      <block type="oled_drawtext" id="444">
+        <field name="TEXT">Hi Kiara</field>
         <next>
-          <block type="movement_forward" id="49">
+          <block type="movement_stop" id="217">
             <next>
               <block type="controls_whileUntil" id="15" inline="false">
                 <field name="MODE">UNTIL</field>
@@ -50,22 +41,13 @@
                         <next>
                           <block type="oled_cleardisplay" id="521">
                             <next>
-                              <block type="oled_drawtext" id="444">
-                                <field name="TEXT">Hi Kiara</field>
-                                <next>
-                                  <block type="movement_stop" id="281">
-                                    <next>
-                                      <block type="led_select" id="471" inline="true">
-                                        <field name="ACTION">OFF</field>
-                                        <value name="LED">
-                                          <block type="math_number" id="512">
-                                            <field name="NUM">1</field>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </next>
+                              <block type="led_select" id="471" inline="true">
+                                <field name="ACTION">OFF</field>
+                                <value name="LED">
+                                  <block type="math_number" id="512">
+                                    <field name="NUM">1</field>
                                   </block>
-                                </next>
+                                </value>
                               </block>
                             </next>
                           </block>
@@ -177,7 +159,7 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="movement_stop" id="217"></block>
+                  <block type="movement_stop" id="281"></block>
                 </next>
               </block>
             </next>
