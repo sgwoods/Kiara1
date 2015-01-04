@@ -51,95 +51,113 @@
                   </block>
                 </value>
                 <next>
-                  <block type="controls_whileUntil" id="311" inline="false">
-                    <field name="MODE">WHILE</field>
-                    <value name="NUMBER">
-                      <block type="math_shift" id="514" inline="true">
-                        <field name="OP">LEFT</field>
-                        <value name="A">
-                          <block type="variables_get" id="515">
-                            <field name="VAR">LightRear</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="518">
-                            <field name="NUM">99</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO">
-                      <block type="movement_setmotors" id="346" inline="true">
-                        <value name="BOTHMOVLEFT">
-                          <block type="variables_get" id="486">
-                            <field name="VAR">LightRear</field>
-                          </block>
-                        </value>
-                        <value name="BOTHMOVRIGHT">
-                          <block type="variables_get" id="487">
-                            <field name="VAR">LightRear</field>
-                          </block>
-                        </value>
+                  <block type="oled_cleardisplay" id="557">
+                    <next>
+                      <block type="oled_drawtext" id="554">
+                        <field name="TEXT">Rr= </field>
                         <next>
-                          <block type="controls_if" id="352" inline="false">
-                            <mutation else="1"></mutation>
-                            <value name="IF0">
-                              <block type="math_shift" id="390" inline="true">
-                                <field name="OP">RIGHT</field>
-                                <value name="A">
-                                  <block type="variables_get" id="485">
-                                    <field name="VAR">LightRear</field>
-                                  </block>
-                                </value>
-                                <value name="B">
-                                  <block type="math_number" id="397">
-                                    <field name="NUM">50</field>
-                                  </block>
-                                </value>
+                          <block type="oled_drawnumber" id="555" inline="true">
+                            <value name="NUMBER">
+                              <block type="variables_get" id="556">
+                                <field name="VAR">LightRear</field>
                               </block>
                             </value>
-                            <statement name="DO0">
-                              <block type="variables_set" id="408" inline="true">
-                                <field name="VAR">Direction</field>
-                                <value name="VALUE">
-                                  <block type="math_number" id="409">
-                                    <field name="NUM">-1</field>
-                                  </block>
-                                </value>
-                                <next>
-                                  <block type="movement_reverse" id="497"></block>
-                                </next>
-                              </block>
-                            </statement>
-                            <statement name="ELSE">
-                              <block type="variables_set" id="410" inline="true">
-                                <field name="VAR">Direction</field>
-                                <value name="VALUE">
-                                  <block type="math_number" id="411">
-                                    <field name="NUM">1</field>
-                                  </block>
-                                </value>
-                                <next>
-                                  <block type="movement_forward" id="507"></block>
-                                </next>
-                              </block>
-                            </statement>
                             <next>
-                              <block type="variables_set" id="464" inline="true">
-                                <field name="VAR">LightRear</field>
-                                <value name="VALUE">
-                                  <block type="sensor_light" id="278">
-                                    <field name="LIGHT">REAR</field>
+                              <block type="controls_whileUntil" id="311" inline="false">
+                                <field name="MODE">WHILE</field>
+                                <value name="NUMBER">
+                                  <block type="math_shift" id="514" inline="true">
+                                    <field name="OP">LEFT</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="515">
+                                        <field name="VAR">LightRear</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="518">
+                                        <field name="NUM">99</field>
+                                      </block>
+                                    </value>
                                   </block>
                                 </value>
+                                <statement name="DO">
+                                  <block type="movement_setmotors" id="346" inline="true">
+                                    <value name="BOTHMOVLEFT">
+                                      <block type="variables_get" id="486">
+                                        <field name="VAR">LightRear</field>
+                                      </block>
+                                    </value>
+                                    <value name="BOTHMOVRIGHT">
+                                      <block type="variables_get" id="487">
+                                        <field name="VAR">LightRear</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_if" id="352" inline="false">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                          <block type="math_shift" id="390" inline="true">
+                                            <field name="OP">RIGHT</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="485">
+                                                <field name="VAR">LightRear</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="397">
+                                                <field name="NUM">50</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="variables_set" id="408" inline="true">
+                                            <field name="VAR">Direction</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id="409">
+                                                <field name="NUM">-1</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="movement_reverse" id="497"></block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                          <block type="variables_set" id="410" inline="true">
+                                            <field name="VAR">Direction</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id="411">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="movement_forward" id="507"></block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="variables_set" id="464" inline="true">
+                                            <field name="VAR">LightRear</field>
+                                            <value name="VALUE">
+                                              <block type="sensor_light" id="278">
+                                                <field name="LIGHT">REAR</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="movement_stop" id="528"></block>
+                                </next>
                               </block>
                             </next>
                           </block>
                         </next>
                       </block>
-                    </statement>
-                    <next>
-                      <block type="movement_stop" id="528"></block>
                     </next>
                   </block>
                 </next>
