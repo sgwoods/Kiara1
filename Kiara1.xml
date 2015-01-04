@@ -1,117 +1,8 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="249" inline="false" x="-228" y="33">
-    <field name="MODE">WHILE</field>
-    <value name="NUMBER">
-      <block type="math_number" id="264">
-        <field name="NUM">1</field>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="oled_cleardisplay" id="123">
-        <next>
-          <block type="oled_setcursor" id="100" inline="true">
-            <value name="STARTX">
-              <block type="math_number" id="107">
-                <field name="NUM">10</field>
-              </block>
-            </value>
-            <value name="STARTY">
-              <block type="math_number" id="114">
-                <field name="NUM">10</field>
-              </block>
-            </value>
-            <next>
-              <block type="oled_setend" id="219" inline="true">
-                <value name="ENDX">
-                  <block type="math_number" id="226">
-                    <field name="NUM">10</field>
-                  </block>
-                </value>
-                <value name="ENDY">
-                  <block type="math_number" id="233">
-                    <field name="NUM">50</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="variables_set" id="91" inline="true">
-                    <field name="VAR">LightRear</field>
-                    <value name="VALUE">
-                      <block type="sensor_light" id="82">
-                        <field name="LIGHT">REAR</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="variables_set" id="237" inline="true">
-                        <field name="VAR">LightLeft</field>
-                        <value name="VALUE">
-                          <block type="sensor_light" id="238">
-                            <field name="LIGHT">LEFT</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="variables_set" id="239" inline="true">
-                            <field name="VAR">LightRight</field>
-                            <value name="VALUE">
-                              <block type="sensor_light" id="240">
-                                <field name="LIGHT">RIGHT</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="oled_drawtext" id="202">
-                                <field name="TEXT">Rr= </field>
-                                <next>
-                                  <block type="oled_drawnumber" id="188" inline="true">
-                                    <value name="NUMBER">
-                                      <block type="variables_get" id="193">
-                                        <field name="VAR">LightRear</field>
-                                      </block>
-                                    </value>
-                                    <next>
-                                      <block type="oled_drawtext" id="234">
-                                        <field name="TEXT">  L=</field>
-                                        <next>
-                                          <block type="oled_drawnumber" id="235" inline="true">
-                                            <value name="NUMBER">
-                                              <block type="variables_get" id="236">
-                                                <field name="VAR">LightLeft</field>
-                                              </block>
-                                            </value>
-                                            <next>
-                                              <block type="oled_drawtext" id="243">
-                                                <field name="TEXT"> R=</field>
-                                                <next>
-                                                  <block type="oled_drawnumber" id="241" inline="true">
-                                                    <value name="NUMBER">
-                                                      <block type="variables_get" id="242">
-                                                        <field name="VAR">LightRight</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
+  <block type="procedures_callnoreturn" id="541" x="-151" y="58">
+    <mutation name="RunAway"></mutation>
   </block>
-  <block type="procedures_defnoreturn" id="1" x="-197" y="674">
+  <block type="procedures_defnoreturn" id="1" x="728" y="27">
     <mutation></mutation>
     <field name="NAME">WriteKiara</field>
     <statement name="STACK">
@@ -135,6 +26,235 @@
             </next>
           </block>
         </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="534" x="-148" y="158">
+    <mutation></mutation>
+    <field name="NAME">RunAway</field>
+    <statement name="STACK">
+      <block type="movement_forward" id="321">
+        <next>
+          <block type="variables_set" id="361" inline="true">
+            <field name="VAR">Direction</field>
+            <value name="VALUE">
+              <block type="math_number" id="368">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_whileUntil" id="311" inline="false">
+                <field name="MODE">WHILE</field>
+                <value name="NUMBER">
+                  <block type="math_shift" id="514" inline="true">
+                    <field name="OP">LEFT</field>
+                    <value name="A">
+                      <block type="variables_get" id="515">
+                        <field name="VAR">LightRear</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="518">
+                        <field name="NUM">99</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="variables_set" id="464" inline="true">
+                    <field name="VAR">LightRear</field>
+                    <value name="VALUE">
+                      <block type="sensor_light" id="278">
+                        <field name="LIGHT">REAR</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="movement_setmotors" id="346" inline="true">
+                        <value name="BOTHMOVLEFT">
+                          <block type="variables_get" id="486">
+                            <field name="VAR">LightRear</field>
+                          </block>
+                        </value>
+                        <value name="BOTHMOVRIGHT">
+                          <block type="variables_get" id="487">
+                            <field name="VAR">LightRear</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="352" inline="false">
+                            <mutation else="1"></mutation>
+                            <value name="IF0">
+                              <block type="math_shift" id="390" inline="true">
+                                <field name="OP">RIGHT</field>
+                                <value name="A">
+                                  <block type="variables_get" id="485">
+                                    <field name="VAR">LightRear</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="397">
+                                    <field name="NUM">50</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="variables_set" id="408" inline="true">
+                                <field name="VAR">Direction</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="409">
+                                    <field name="NUM">-1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="movement_reverse" id="497"></block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="variables_set" id="410" inline="true">
+                                <field name="VAR">Direction</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="411">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="movement_forward" id="507"></block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="movement_stop" id="528"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="269" x="720" y="235">
+    <mutation></mutation>
+    <field name="NAME">LightMeter</field>
+    <statement name="STACK">
+      <block type="controls_whileUntil" id="249" inline="false">
+        <field name="MODE">WHILE</field>
+        <value name="NUMBER">
+          <block type="math_number" id="264">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="oled_cleardisplay" id="123">
+            <next>
+              <block type="oled_setcursor" id="100" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="107">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="114">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_setend" id="219" inline="true">
+                    <value name="ENDX">
+                      <block type="math_number" id="226">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="ENDY">
+                      <block type="math_number" id="233">
+                        <field name="NUM">50</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="91" inline="true">
+                        <field name="VAR">LightRear</field>
+                        <value name="VALUE">
+                          <block type="sensor_light" id="82">
+                            <field name="LIGHT">REAR</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="237" inline="true">
+                            <field name="VAR">LightLeft</field>
+                            <value name="VALUE">
+                              <block type="sensor_light" id="238">
+                                <field name="LIGHT">LEFT</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="239" inline="true">
+                                <field name="VAR">LightRight</field>
+                                <value name="VALUE">
+                                  <block type="sensor_light" id="240">
+                                    <field name="LIGHT">RIGHT</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_drawtext" id="202">
+                                    <field name="TEXT">Rr= </field>
+                                    <next>
+                                      <block type="oled_drawnumber" id="188" inline="true">
+                                        <value name="NUMBER">
+                                          <block type="variables_get" id="193">
+                                            <field name="VAR">LightRear</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="oled_drawtext" id="234">
+                                            <field name="TEXT">  L=</field>
+                                            <next>
+                                              <block type="oled_drawnumber" id="235" inline="true">
+                                                <value name="NUMBER">
+                                                  <block type="variables_get" id="236">
+                                                    <field name="VAR">LightLeft</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="oled_drawtext" id="243">
+                                                    <field name="TEXT"> R=</field>
+                                                    <next>
+                                                      <block type="oled_drawnumber" id="241" inline="true">
+                                                        <value name="NUMBER">
+                                                          <block type="variables_get" id="242">
+                                                            <field name="VAR">LightRight</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
       </block>
     </statement>
   </block>
