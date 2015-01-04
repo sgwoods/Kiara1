@@ -26,6 +26,14 @@
       </block>
     </statement>
   </block>
+  <block type="procedures_callnoreturn" id="108" x="67" y="56">
+    <mutation name="WriteKiara"></mutation>
+    <next>
+      <block type="procedures_callnoreturn" id="99">
+        <mutation name="RunFromLight"></mutation>
+      </block>
+    </next>
+  </block>
   <block type="procedures_defnoreturn" id="58" x="717" y="22">
     <mutation></mutation>
     <field name="NAME">WriteCaelyn</field>
@@ -53,10 +61,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_callnoreturn" id="99" x="67" y="84">
-    <mutation name="RunFromLight"></mutation>
-  </block>
-  <block type="procedures_defnoreturn" id="1" x="80" y="149">
+  <block type="procedures_defnoreturn" id="1" x="65" y="156">
     <mutation></mutation>
     <field name="NAME">RunFromLight</field>
     <statement name="STACK">
