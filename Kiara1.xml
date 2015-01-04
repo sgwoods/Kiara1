@@ -1,45 +1,83 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="15" inline="false" x="-59" y="8">
-    <field name="MODE">UNTIL</field>
-    <value name="NUMBER">
-      <block type="sensor_button" id="137">
-        <field name="OBJECT">ENTER</field>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="controls_if" id="55" inline="false">
-        <value name="IF0">
-          <block type="sensor_object" id="39">
-            <field name="OBJECT">LEFTSIDE</field>
+  <block type="movement_forward" id="49" x="-58" y="-14">
+    <next>
+      <block type="controls_whileUntil" id="15" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="sensor_button" id="137">
+            <field name="OBJECT">ENTER</field>
           </block>
         </value>
-        <statement name="DO0">
-          <block type="movement_right" id="75">
+        <statement name="DO">
+          <block type="controls_if" id="55" inline="false">
+            <value name="IF0">
+              <block type="math_shift" id="227" inline="true">
+                <field name="OP">LEFT</field>
+                <value name="A">
+                  <block type="sensor_object" id="39">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="234">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="movement_stop" id="281"></block>
+            </statement>
             <next>
-              <block type="movement_forward" id="49"></block>
+              <block type="controls_if" id="90" inline="false">
+                <value name="IF0">
+                  <block type="math_shift" id="253" inline="true">
+                    <field name="OP">LEFT</field>
+                    <value name="A">
+                      <block type="sensor_object" id="120">
+                        <field name="OBJECT">RIGHTFRONT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="260">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="movement_stop" id="291"></block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="297" inline="false">
+                    <value name="IF0">
+                      <block type="math_shift" id="316" inline="true">
+                        <field name="OP">LEFT</field>
+                        <value name="A">
+                          <block type="sensor_object" id="304">
+                            <field name="OBJECT">REAR</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="323">
+                            <field name="NUM">25</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="movement_reverse" id="333"></block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
             </next>
           </block>
         </statement>
         <next>
-          <block type="controls_if" id="90" inline="false">
-            <value name="IF0">
-              <block type="sensor_object" id="120">
-                <field name="OBJECT">RIGHTFRONT</field>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="movement_left" id="130">
-                <next>
-                  <block type="movement_forward" id="151"></block>
-                </next>
-              </block>
-            </statement>
-          </block>
+          <block type="movement_stop" id="217"></block>
         </next>
       </block>
-    </statement>
-    <next>
-      <block type="movement_stop" id="217"></block>
     </next>
   </block>
 </xml>
