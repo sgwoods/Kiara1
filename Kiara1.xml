@@ -53,10 +53,10 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_callnoreturn" id="99" x="83" y="105">
+  <block type="procedures_callnoreturn" id="99" x="67" y="84">
     <mutation name="RunFromLight"></mutation>
   </block>
-  <block type="procedures_defnoreturn" id="1" x="71" y="221">
+  <block type="procedures_defnoreturn" id="1" x="80" y="149">
     <mutation></mutation>
     <field name="NAME">RunFromLight</field>
     <statement name="STACK">
@@ -225,7 +225,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="43" x="535" y="472">
+  <block type="procedures_defnoreturn" id="43" x="622" y="398">
     <mutation></mutation>
     <field name="NAME">holdjunk</field>
     <statement name="STACK">
