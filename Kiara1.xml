@@ -73,13 +73,33 @@
                                 <statement name="DO">
                                   <block type="movement_setmotors" id="346" inline="true">
                                     <value name="BOTHMOVLEFT">
-                                      <block type="variables_get" id="486">
-                                        <field name="VAR">LightRear</field>
+                                      <block type="math_arithmetic" id="591" inline="true">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="592">
+                                            <field name="VAR">LightRear</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="593">
+                                            <field name="VAR">Direction</field>
+                                          </block>
+                                        </value>
                                       </block>
                                     </value>
                                     <value name="BOTHMOVRIGHT">
-                                      <block type="variables_get" id="487">
-                                        <field name="VAR">LightRear</field>
+                                      <block type="math_arithmetic" id="579" inline="true">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="572">
+                                            <field name="VAR">LightRear</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="variables_get" id="590">
+                                            <field name="VAR">Direction</field>
+                                          </block>
+                                        </value>
                                       </block>
                                     </value>
                                     <next>
