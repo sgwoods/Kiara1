@@ -50,7 +50,7 @@
                         </value>
                         <next>
                           <block type="oled_drawtext" id="202">
-                            <field name="TEXT">Light Rear = </field>
+                            <field name="TEXT">Light Rear = /0</field>
                             <next>
                               <block type="oled_drawnumber" id="188" inline="true">
                                 <value name="NUMBER">
