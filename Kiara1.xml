@@ -1,7 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="procedures_callnoreturn" id="7" x="67" y="56">
-    <mutation name="WriteKiara"></mutation>
-  </block>
   <block type="procedures_defnoreturn" id="1" x="830" y="53">
     <mutation></mutation>
     <field name="NAME">WriteKiara</field>
@@ -222,7 +219,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="50" x="388" y="420">
+  <block type="procedures_defnoreturn" id="50" x="467" y="475">
     <mutation></mutation>
     <field name="NAME">holdjunk</field>
     <statement name="STACK">
