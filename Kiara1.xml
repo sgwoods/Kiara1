@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="procedures_callnoreturn" id="541" x="-151" y="58">
-    <mutation name="RunAway"></mutation>
+    <mutation name="BackToLight"></mutation>
   </block>
   <block type="procedures_defnoreturn" id="1" x="728" y="27">
     <mutation></mutation>
@@ -29,9 +29,9 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="534" x="-148" y="158">
+  <block type="procedures_defnoreturn" id="534" x="-149" y="135">
     <mutation></mutation>
-    <field name="NAME">RunAway</field>
+    <field name="NAME">BackToLight</field>
     <statement name="STACK">
       <block type="movement_forward" id="321">
         <next>
@@ -43,32 +43,32 @@
               </block>
             </value>
             <next>
-              <block type="controls_whileUntil" id="311" inline="false">
-                <field name="MODE">WHILE</field>
-                <value name="NUMBER">
-                  <block type="math_shift" id="514" inline="true">
-                    <field name="OP">LEFT</field>
-                    <value name="A">
-                      <block type="variables_get" id="515">
-                        <field name="VAR">LightRear</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="518">
-                        <field name="NUM">99</field>
-                      </block>
-                    </value>
+              <block type="variables_set" id="552" inline="true">
+                <field name="VAR">LightRear</field>
+                <value name="VALUE">
+                  <block type="sensor_light" id="553">
+                    <field name="LIGHT">REAR</field>
                   </block>
                 </value>
-                <statement name="DO">
-                  <block type="variables_set" id="464" inline="true">
-                    <field name="VAR">LightRear</field>
-                    <value name="VALUE">
-                      <block type="sensor_light" id="278">
-                        <field name="LIGHT">REAR</field>
+                <next>
+                  <block type="controls_whileUntil" id="311" inline="false">
+                    <field name="MODE">WHILE</field>
+                    <value name="NUMBER">
+                      <block type="math_shift" id="514" inline="true">
+                        <field name="OP">LEFT</field>
+                        <value name="A">
+                          <block type="variables_get" id="515">
+                            <field name="VAR">LightRear</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="518">
+                            <field name="NUM">99</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
-                    <next>
+                    <statement name="DO">
                       <block type="movement_setmotors" id="346" inline="true">
                         <value name="BOTHMOVLEFT">
                           <block type="variables_get" id="486">
@@ -124,14 +124,24 @@
                                 </next>
                               </block>
                             </statement>
+                            <next>
+                              <block type="variables_set" id="464" inline="true">
+                                <field name="VAR">LightRear</field>
+                                <value name="VALUE">
+                                  <block type="sensor_light" id="278">
+                                    <field name="LIGHT">REAR</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
+                    </statement>
+                    <next>
+                      <block type="movement_stop" id="528"></block>
                     </next>
                   </block>
-                </statement>
-                <next>
-                  <block type="movement_stop" id="528"></block>
                 </next>
               </block>
             </next>
