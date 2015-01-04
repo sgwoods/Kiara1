@@ -1,4 +1,17 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="88" inline="false" x="-104" y="96">
+    <field name="MODE">WHILE</field>
+    <value name="NUMBER">
+      <block type="math_number" id="95">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="procedures_callnoreturn" id="73">
+        <mutation name="RunFromLight"></mutation>
+      </block>
+    </statement>
+  </block>
   <block type="procedures_defnoreturn" id="1" x="830" y="53">
     <mutation></mutation>
     <field name="NAME">WriteKiara</field>
@@ -53,7 +66,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="15" x="-50" y="209">
+  <block type="procedures_defnoreturn" id="15" x="-117" y="242">
     <mutation></mutation>
     <field name="NAME">RunFromLight</field>
     <statement name="STACK">
