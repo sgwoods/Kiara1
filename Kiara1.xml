@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="procedures_callnoreturn" id="541" x="-151" y="58">
-    <mutation name="BackToLight"></mutation>
+    <mutation name="RunFromLight"></mutation>
   </block>
   <block type="procedures_defnoreturn" id="1" x="728" y="27">
     <mutation></mutation>
@@ -31,132 +31,59 @@
   </block>
   <block type="procedures_defnoreturn" id="534" x="-149" y="135">
     <mutation></mutation>
-    <field name="NAME">BackToLight</field>
+    <field name="NAME">RunFromLight</field>
     <statement name="STACK">
-      <block type="movement_forward" id="321">
+      <block type="variables_set" id="670" inline="true">
+        <field name="VAR">LightRear</field>
+        <value name="VALUE">
+          <block type="sensor_light" id="671">
+            <field name="LIGHT">REAR</field>
+          </block>
+        </value>
         <next>
-          <block type="oled_cleardisplay" id="557">
-            <next>
-              <block type="variables_set" id="361" inline="true">
-                <field name="VAR">Direction</field>
+          <block type="controls_whileUntil" id="311" inline="false">
+            <field name="MODE">WHILE</field>
+            <value name="NUMBER">
+              <block type="logic_compare" id="652" inline="true">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="646">
+                    <field name="VAR">LightRear</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="669">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="552" inline="true">
+                <field name="VAR">LightRear</field>
                 <value name="VALUE">
-                  <block type="math_number" id="368">
-                    <field name="NUM">1</field>
+                  <block type="sensor_light" id="553">
+                    <field name="LIGHT">REAR</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set" id="552" inline="true">
-                    <field name="VAR">LightRear</field>
-                    <value name="VALUE">
-                      <block type="sensor_light" id="553">
-                        <field name="LIGHT">REAR</field>
+                  <block type="movement_setmotors" id="346" inline="true">
+                    <value name="BOTHMOVLEFT">
+                      <block type="variables_get" id="592">
+                        <field name="VAR">LightRear</field>
                       </block>
                     </value>
-                    <next>
-                      <block type="controls_whileUntil" id="311" inline="false">
-                        <field name="MODE">WHILE</field>
-                        <value name="NUMBER">
-                          <block type="math_number" id="564">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <statement name="DO">
-                          <block type="oled_drawtext" id="554">
-                            <field name="TEXT">Rr= </field>
-                            <next>
-                              <block type="oled_drawnumber" id="555" inline="true">
-                                <value name="NUMBER">
-                                  <block type="variables_get" id="556">
-                                    <field name="VAR">LightRear</field>
-                                  </block>
-                                </value>
-                                <next>
-                                  <block type="oled_drawtext" id="594">
-                                    <field name="TEXT"> / </field>
-                                    <next>
-                                      <block type="movement_setmotors" id="346" inline="true">
-                                        <value name="BOTHMOVLEFT">
-                                          <block type="variables_get" id="592">
-                                            <field name="VAR">LightRear</field>
-                                          </block>
-                                        </value>
-                                        <value name="BOTHMOVRIGHT">
-                                          <block type="variables_get" id="572">
-                                            <field name="VAR">LightRear</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="controls_if" id="352" inline="false">
-                                            <mutation else="1"></mutation>
-                                            <value name="IF0">
-                                              <block type="math_shift" id="390" inline="true">
-                                                <field name="OP">RIGHT</field>
-                                                <value name="A">
-                                                  <block type="variables_get" id="485">
-                                                    <field name="VAR">LightRear</field>
-                                                  </block>
-                                                </value>
-                                                <value name="B">
-                                                  <block type="math_number" id="397">
-                                                    <field name="NUM">25</field>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                            <statement name="DO0">
-                                              <block type="variables_set" id="408" inline="true">
-                                                <field name="VAR">Direction</field>
-                                                <value name="VALUE">
-                                                  <block type="math_number" id="409">
-                                                    <field name="NUM">-1</field>
-                                                  </block>
-                                                </value>
-                                                <next>
-                                                  <block type="movement_reverse" id="497"></block>
-                                                </next>
-                                              </block>
-                                            </statement>
-                                            <statement name="ELSE">
-                                              <block type="variables_set" id="410" inline="true">
-                                                <field name="VAR">Direction</field>
-                                                <value name="VALUE">
-                                                  <block type="math_number" id="411">
-                                                    <field name="NUM">1</field>
-                                                  </block>
-                                                </value>
-                                                <next>
-                                                  <block type="movement_forward" id="507"></block>
-                                                </next>
-                                              </block>
-                                            </statement>
-                                            <next>
-                                              <block type="variables_set" id="464" inline="true">
-                                                <field name="VAR">LightRear</field>
-                                                <value name="VALUE">
-                                                  <block type="sensor_light" id="278">
-                                                    <field name="LIGHT">REAR</field>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </statement>
-                        <next>
-                          <block type="movement_stop" id="528"></block>
-                        </next>
+                    <value name="BOTHMOVRIGHT">
+                      <block type="variables_get" id="572">
+                        <field name="VAR">LightRear</field>
                       </block>
-                    </next>
+                    </value>
                   </block>
                 </next>
               </block>
+            </statement>
+            <next>
+              <block type="movement_stop" id="528"></block>
             </next>
           </block>
         </next>
@@ -278,6 +205,76 @@
             </next>
           </block>
         </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="635" x="364" y="419">
+    <mutation></mutation>
+    <field name="NAME">holdjunk</field>
+    <statement name="STACK">
+      <block type="variables_set" id="361" inline="true">
+        <field name="VAR">Direction</field>
+        <value name="VALUE">
+          <block type="math_number" id="368">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="352" inline="false">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="math_shift" id="390" inline="true">
+                <field name="OP">RIGHT</field>
+                <value name="A">
+                  <block type="variables_get" id="485">
+                    <field name="VAR">LightRear</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="397">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="408" inline="true">
+                <field name="VAR">Direction</field>
+                <value name="VALUE">
+                  <block type="math_number" id="409">
+                    <field name="NUM">-1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="movement_reverse" id="497"></block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="variables_set" id="410" inline="true">
+                <field name="VAR">Direction</field>
+                <value name="VALUE">
+                  <block type="math_number" id="411">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="movement_forward" id="507"></block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="variables_set" id="464" inline="true">
+                <field name="VAR">LightRear</field>
+                <value name="VALUE">
+                  <block type="sensor_light" id="278">
+                    <field name="LIGHT">REAR</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
