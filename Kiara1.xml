@@ -1,12 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="procedures_callnoreturn" id="81" x="74" y="40">
-    <mutation name="WriteKiara"></mutation>
-    <next>
-      <block type="procedures_callnoreturn" id="90">
-        <mutation name="LightMeter"></mutation>
-      </block>
-    </next>
-  </block>
   <block type="procedures_defnoreturn" id="12" x="1001" y="6">
     <mutation></mutation>
     <field name="NAME">WriteKiara</field>
@@ -60,6 +52,9 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="procedures_callnoreturn" id="99" x="83" y="105">
+    <mutation name="RunFromLight"></mutation>
   </block>
   <block type="procedures_defnoreturn" id="1" x="476" y="201">
     <mutation></mutation>
