@@ -1,83 +1,93 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="123" x="-162" y="2">
-    <next>
-      <block type="oled_setcursor" id="100" inline="true">
-        <value name="STARTX">
-          <block type="math_number" id="107">
-            <field name="NUM">10</field>
-          </block>
-        </value>
-        <value name="STARTY">
-          <block type="math_number" id="114">
-            <field name="NUM">10</field>
-          </block>
-        </value>
+  <block type="controls_whileUntil" id="249" inline="false" x="-228" y="33">
+    <field name="MODE">WHILE</field>
+    <value name="NUMBER">
+      <block type="math_number" id="264">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="oled_cleardisplay" id="123">
         <next>
-          <block type="oled_setend" id="219" inline="true">
-            <value name="ENDX">
-              <block type="math_number" id="226">
+          <block type="oled_setcursor" id="100" inline="true">
+            <value name="STARTX">
+              <block type="math_number" id="107">
                 <field name="NUM">10</field>
               </block>
             </value>
-            <value name="ENDY">
-              <block type="math_number" id="233">
-                <field name="NUM">50</field>
+            <value name="STARTY">
+              <block type="math_number" id="114">
+                <field name="NUM">10</field>
               </block>
             </value>
             <next>
-              <block type="variables_set" id="91" inline="true">
-                <field name="VAR">LightRear</field>
-                <value name="VALUE">
-                  <block type="sensor_light" id="82">
-                    <field name="LIGHT">REAR</field>
+              <block type="oled_setend" id="219" inline="true">
+                <value name="ENDX">
+                  <block type="math_number" id="226">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="ENDY">
+                  <block type="math_number" id="233">
+                    <field name="NUM">50</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set" id="237" inline="true">
-                    <field name="VAR">LightLeft</field>
+                  <block type="variables_set" id="91" inline="true">
+                    <field name="VAR">LightRear</field>
                     <value name="VALUE">
-                      <block type="sensor_light" id="238">
-                        <field name="LIGHT">LEFT</field>
+                      <block type="sensor_light" id="82">
+                        <field name="LIGHT">REAR</field>
                       </block>
                     </value>
                     <next>
-                      <block type="variables_set" id="239" inline="true">
-                        <field name="VAR">LightRight</field>
+                      <block type="variables_set" id="237" inline="true">
+                        <field name="VAR">LightLeft</field>
                         <value name="VALUE">
-                          <block type="sensor_light" id="240">
-                            <field name="LIGHT">RIGHT</field>
+                          <block type="sensor_light" id="238">
+                            <field name="LIGHT">LEFT</field>
                           </block>
                         </value>
                         <next>
-                          <block type="oled_drawtext" id="202">
-                            <field name="TEXT">Rr= </field>
+                          <block type="variables_set" id="239" inline="true">
+                            <field name="VAR">LightRight</field>
+                            <value name="VALUE">
+                              <block type="sensor_light" id="240">
+                                <field name="LIGHT">RIGHT</field>
+                              </block>
+                            </value>
                             <next>
-                              <block type="oled_drawnumber" id="188" inline="true">
-                                <value name="NUMBER">
-                                  <block type="variables_get" id="193">
-                                    <field name="VAR">LightRear</field>
-                                  </block>
-                                </value>
+                              <block type="oled_drawtext" id="202">
+                                <field name="TEXT">Rr= </field>
                                 <next>
-                                  <block type="oled_drawtext" id="234">
-                                    <field name="TEXT">  L=</field>
+                                  <block type="oled_drawnumber" id="188" inline="true">
+                                    <value name="NUMBER">
+                                      <block type="variables_get" id="193">
+                                        <field name="VAR">LightRear</field>
+                                      </block>
+                                    </value>
                                     <next>
-                                      <block type="oled_drawnumber" id="235" inline="true">
-                                        <value name="NUMBER">
-                                          <block type="variables_get" id="236">
-                                            <field name="VAR">LightLeft</field>
-                                          </block>
-                                        </value>
+                                      <block type="oled_drawtext" id="234">
+                                        <field name="TEXT">  L=</field>
                                         <next>
-                                          <block type="oled_drawtext" id="243">
-                                            <field name="TEXT"> R=</field>
+                                          <block type="oled_drawnumber" id="235" inline="true">
+                                            <value name="NUMBER">
+                                              <block type="variables_get" id="236">
+                                                <field name="VAR">LightLeft</field>
+                                              </block>
+                                            </value>
                                             <next>
-                                              <block type="oled_drawnumber" id="241" inline="true">
-                                                <value name="NUMBER">
-                                                  <block type="variables_get" id="242">
-                                                    <field name="VAR">LightRight</field>
+                                              <block type="oled_drawtext" id="243">
+                                                <field name="TEXT"> R=</field>
+                                                <next>
+                                                  <block type="oled_drawnumber" id="241" inline="true">
+                                                    <value name="NUMBER">
+                                                      <block type="variables_get" id="242">
+                                                        <field name="VAR">LightRight</field>
+                                                      </block>
+                                                    </value>
                                                   </block>
-                                                </value>
+                                                </next>
                                               </block>
                                             </next>
                                           </block>
@@ -99,7 +109,7 @@
           </block>
         </next>
       </block>
-    </next>
+    </statement>
   </block>
   <block type="procedures_defnoreturn" id="1" x="-197" y="674">
     <mutation></mutation>
