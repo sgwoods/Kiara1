@@ -34,7 +34,12 @@
                   </block>
                 </value>
                 <next>
-                  <block type="movement_stop" id="281"></block>
+                  <block type="oled_drawtext" id="444">
+                    <field name="TEXT">Hi Kiara</field>
+                    <next>
+                      <block type="movement_stop" id="281"></block>
+                    </next>
+                  </block>
                 </next>
               </block>
             </statement>
@@ -64,7 +69,12 @@
                       </block>
                     </value>
                     <next>
-                      <block type="movement_stop" id="291"></block>
+                      <block type="oled_drawtext" id="453">
+                        <field name="TEXT">Ravens Rule</field>
+                        <next>
+                          <block type="movement_stop" id="291"></block>
+                        </next>
+                      </block>
                     </next>
                   </block>
                 </statement>
@@ -94,7 +104,12 @@
                           </block>
                         </value>
                         <next>
-                          <block type="movement_stop" id="359"></block>
+                          <block type="oled_drawtext" id="462">
+                            <field name="TEXT">SJK Rules</field>
+                            <next>
+                              <block type="movement_stop" id="359"></block>
+                            </next>
+                          </block>
                         </next>
                       </block>
                     </statement>
