@@ -27,7 +27,7 @@
             </value>
             <statement name="DO0">
               <block type="led_select" id="395" inline="true">
-                <field name="ACTION">FLASH</field>
+                <field name="ACTION">ON</field>
                 <value name="LED">
                   <block type="math_number" id="413">
                     <field name="NUM">1</field>
@@ -37,7 +37,17 @@
                   <block type="oled_drawtext" id="444">
                     <field name="TEXT">Hi Kiara</field>
                     <next>
-                      <block type="movement_stop" id="281"></block>
+                      <block type="led_select" id="471" inline="true">
+                        <field name="ACTION">OFF</field>
+                        <value name="LED">
+                          <block type="math_number" id="512">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="movement_stop" id="281"></block>
+                        </next>
+                      </block>
                     </next>
                   </block>
                 </next>
@@ -72,7 +82,17 @@
                       <block type="oled_drawtext" id="453">
                         <field name="TEXT">Ravens Rule</field>
                         <next>
-                          <block type="movement_stop" id="291"></block>
+                          <block type="led_select" id="480" inline="true">
+                            <field name="ACTION">OFF</field>
+                            <value name="LED">
+                              <block type="math_number" id="505">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="movement_stop" id="291"></block>
+                            </next>
+                          </block>
                         </next>
                       </block>
                     </next>
@@ -97,7 +117,7 @@
                     </value>
                     <statement name="DO0">
                       <block type="led_select" id="368" inline="true">
-                        <field name="ACTION">FLASH</field>
+                        <field name="ACTION">ON</field>
                         <value name="LED">
                           <block type="math_number" id="386">
                             <field name="NUM">3</field>
@@ -107,7 +127,17 @@
                           <block type="oled_drawtext" id="462">
                             <field name="TEXT">SJK Rules</field>
                             <next>
-                              <block type="movement_stop" id="359"></block>
+                              <block type="led_select" id="489" inline="true">
+                                <field name="ACTION">OFF</field>
+                                <value name="LED">
+                                  <block type="math_number" id="498">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="movement_stop" id="359"></block>
+                                </next>
+                              </block>
                             </next>
                           </block>
                         </next>
