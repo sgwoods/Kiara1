@@ -1,141 +1,70 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="49" x="-58" y="-14">
+  <block type="oled_setcursor" id="557" inline="true" x="-139" y="81">
+    <value name="STARTX">
+      <block type="math_number" id="573">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <value name="STARTY">
+      <block type="math_number" id="580">
+        <field name="NUM">5</field>
+      </block>
+    </value>
     <next>
-      <block type="controls_whileUntil" id="15" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="sensor_button" id="137">
-            <field name="OBJECT">ENTER</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="controls_if" id="55" inline="false">
-            <value name="IF0">
-              <block type="math_shift" id="227" inline="true">
-                <field name="OP">LEFT</field>
-                <value name="A">
-                  <block type="sensor_object" id="39">
-                    <field name="OBJECT">LEFTFRONT</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="234">
-                    <field name="NUM">25</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="led_select" id="395" inline="true">
-                <field name="ACTION">ON</field>
-                <value name="LED">
-                  <block type="math_number" id="413">
-                    <field name="NUM">1</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="oled_drawtext" id="444">
-                    <field name="TEXT">Hi Kiara</field>
-                    <next>
-                      <block type="led_select" id="471" inline="true">
-                        <field name="ACTION">OFF</field>
-                        <value name="LED">
-                          <block type="math_number" id="512">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="movement_stop" id="281"></block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </statement>
+      <block type="oled_cleardisplay" id="548">
+        <next>
+          <block type="movement_forward" id="49">
             <next>
-              <block type="controls_if" id="90" inline="false">
-                <value name="IF0">
-                  <block type="math_shift" id="253" inline="true">
-                    <field name="OP">LEFT</field>
-                    <value name="A">
-                      <block type="sensor_object" id="120">
-                        <field name="OBJECT">RIGHTFRONT</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="260">
-                        <field name="NUM">25</field>
-                      </block>
-                    </value>
+              <block type="controls_whileUntil" id="15" inline="false">
+                <field name="MODE">UNTIL</field>
+                <value name="NUMBER">
+                  <block type="sensor_button" id="137">
+                    <field name="OBJECT">ENTER</field>
                   </block>
                 </value>
-                <statement name="DO0">
-                  <block type="led_select" id="404" inline="true">
-                    <field name="ACTION">ON</field>
-                    <value name="LED">
-                      <block type="math_number" id="431">
-                        <field name="NUM">2</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="oled_drawtext" id="453">
-                        <field name="TEXT">Ravens Rule</field>
-                        <next>
-                          <block type="led_select" id="480" inline="true">
-                            <field name="ACTION">OFF</field>
-                            <value name="LED">
-                              <block type="math_number" id="505">
-                                <field name="NUM">2</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="movement_stop" id="291"></block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </statement>
-                <next>
-                  <block type="controls_if" id="297" inline="false">
+                <statement name="DO">
+                  <block type="controls_if" id="55" inline="false">
                     <value name="IF0">
-                      <block type="math_shift" id="316" inline="true">
+                      <block type="math_shift" id="227" inline="true">
                         <field name="OP">LEFT</field>
                         <value name="A">
-                          <block type="sensor_object" id="304">
-                            <field name="OBJECT">REAR</field>
+                          <block type="sensor_object" id="39">
+                            <field name="OBJECT">LEFTFRONT</field>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="math_number" id="323">
+                          <block type="math_number" id="234">
                             <field name="NUM">25</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="led_select" id="368" inline="true">
+                      <block type="led_select" id="395" inline="true">
                         <field name="ACTION">ON</field>
                         <value name="LED">
-                          <block type="math_number" id="386">
-                            <field name="NUM">3</field>
+                          <block type="math_number" id="413">
+                            <field name="NUM">1</field>
                           </block>
                         </value>
                         <next>
-                          <block type="oled_drawtext" id="462">
-                            <field name="TEXT">SJK Rules</field>
+                          <block type="oled_cleardisplay" id="521">
                             <next>
-                              <block type="led_select" id="489" inline="true">
-                                <field name="ACTION">OFF</field>
-                                <value name="LED">
-                                  <block type="math_number" id="498">
-                                    <field name="NUM">3</field>
-                                  </block>
-                                </value>
+                              <block type="oled_drawtext" id="444">
+                                <field name="TEXT">Hi Kiara</field>
                                 <next>
-                                  <block type="movement_stop" id="359"></block>
+                                  <block type="movement_stop" id="281">
+                                    <next>
+                                      <block type="led_select" id="471" inline="true">
+                                        <field name="ACTION">OFF</field>
+                                        <value name="LED">
+                                          <block type="math_number" id="512">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
                                 </next>
                               </block>
                             </next>
@@ -143,14 +72,116 @@
                         </next>
                       </block>
                     </statement>
+                    <next>
+                      <block type="controls_if" id="90" inline="false">
+                        <value name="IF0">
+                          <block type="math_shift" id="253" inline="true">
+                            <field name="OP">LEFT</field>
+                            <value name="A">
+                              <block type="sensor_object" id="120">
+                                <field name="OBJECT">RIGHTFRONT</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="260">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="led_select" id="404" inline="true">
+                            <field name="ACTION">ON</field>
+                            <value name="LED">
+                              <block type="math_number" id="431">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_cleardisplay" id="530">
+                                <next>
+                                  <block type="oled_drawtext" id="453">
+                                    <field name="TEXT">Ravens Rule</field>
+                                    <next>
+                                      <block type="led_select" id="480" inline="true">
+                                        <field name="ACTION">OFF</field>
+                                        <value name="LED">
+                                          <block type="math_number" id="505">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="movement_stop" id="291"></block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="297" inline="false">
+                            <value name="IF0">
+                              <block type="math_shift" id="316" inline="true">
+                                <field name="OP">LEFT</field>
+                                <value name="A">
+                                  <block type="sensor_object" id="304">
+                                    <field name="OBJECT">REAR</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="323">
+                                    <field name="NUM">25</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="led_select" id="368" inline="true">
+                                <field name="ACTION">ON</field>
+                                <value name="LED">
+                                  <block type="math_number" id="386">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_cleardisplay" id="539">
+                                    <next>
+                                      <block type="oled_drawtext" id="462">
+                                        <field name="TEXT">SJK Rules</field>
+                                        <next>
+                                          <block type="led_select" id="489" inline="true">
+                                            <field name="ACTION">OFF</field>
+                                            <value name="LED">
+                                              <block type="math_number" id="498">
+                                                <field name="NUM">3</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="movement_stop" id="359"></block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
                   </block>
+                </statement>
+                <next>
+                  <block type="movement_stop" id="217"></block>
                 </next>
               </block>
             </next>
           </block>
-        </statement>
-        <next>
-          <block type="movement_stop" id="217"></block>
         </next>
       </block>
     </next>
